@@ -4,7 +4,7 @@ import Logo from "../assets/logo.png";
 const Navbar = () => {
   const [active, setActive] = useState<string>("Home");
   return (
-    <div className="w-full py-3 px-8 bg-blue-700 flex items-center justify-between">
+    <div className="w-full py-3 px-12 bg-blue-700 flex items-center justify-between">
       <div className="logoDiv">
         <img src={Logo} className="w-[150px]" />
       </div>
