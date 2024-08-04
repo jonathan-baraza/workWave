@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 
 export type JobType = {
   id: string;
@@ -16,11 +16,29 @@ export type JobType = {
 };
 
 const JobCard = ({ job }: { job: JobType }) => {
+  const [showFullDescription, setShowFullDescription] =
+    useState<boolean>(false);
+
+  const setJD = (): string => {
+    return showFullDescription
+      ? job.description
+      : job.description.slice(0, 120) + "...";
+  };
+
   return (
     <div className="w-full text-[12px] border rounded shadow-lg bg-[#fcfefe] border-gray-100 shadow-sm p-6 flex flex-col gap-3">
       <div className="text-gray-500 font-bold">{job.type}</div>
       <div className="font-bold text-sm">{job.title}</div>
-      <div className="">{job.description.slice(0, 138)}...</div>
+      <div className="">
+        {setJD()}
+
+        <span
+          onClick={() => setShowFullDescription(!showFullDescription)}
+          className="hover:underline hover:cursor-pointer text-xs text-blue-700"
+        >
+          &nbsp;{!showFullDescription ? "show more" : "show less"}
+        </span>
+      </div>
       <div className="mt-2 text-blue-500 text-bold">{job.salary}</div>
       <hr />
       <div className="font-bold text-orange-700">{job.location}</div>
