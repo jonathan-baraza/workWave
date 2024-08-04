@@ -4,7 +4,7 @@ import JobListing from "./JobListing";
 import { JobType } from "./JobListing";
 const JobListings = () => {
   const [viewJobs, setViewJobs] = useState<JobType[]>(jobs.jobs.slice(0, 3));
-  const [jobRange, setJobRange] = useState<number>(2);
+  const [jobRange, setJobRange] = useState<number>(3);
 
   //Set Jobs
   useEffect(() => {
