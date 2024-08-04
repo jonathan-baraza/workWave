@@ -21,16 +21,22 @@ const JobListings = () => {
           viewJobs.map((job: JobType) => <JobListing job={job} key={job.id} />)}
       </div>
 
-      {jobs.jobs.length > jobRange && (
-        <div className="w-full flex justify-center my-5">
+      <div className="w-full flex items-center gap-8 justify-center my-5">
+        {jobs.jobs.length > jobRange && (
           <button
             onClick={() => setJobRange(jobRange + 3)}
             className="w-fit text-sm bg-black hover:cursor-pointer hover:shadow-xl duration-100 text-white rounded py-1 px-3"
           >
             View More
           </button>
-        </div>
-      )}
+        )}
+        <button
+          onClick={() => setJobRange(jobRange + 3)}
+          className="w-fit text-sm bg-black hover:cursor-pointer hover:shadow-xl duration-100 text-white rounded py-1 px-3"
+        >
+          View all jobs
+        </button>
+      </div>
     </div>
   );
 };
