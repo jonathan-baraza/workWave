@@ -1,6 +1,6 @@
 import React from "react";
 
-type JobType = {
+export type JobType = {
   id: string;
   title: string;
   type: string;
