@@ -2,6 +2,7 @@ import Hero from "./components/Hero";
 import HomeCards from "./components/HomeCards";
 import JobListings from "./components/JobListings";
 import Navbar from "./components/Navbar";
+import ViewAllJobs from "./components/ViewAllJobs";
 
 function App() {
   const heroData = {
@@ -16,6 +17,7 @@ function App() {
         <Hero title={heroData.title} tagline={heroData.tagline} />
         <HomeCards />
         <JobListings />
+        {/* <ViewAllJobs /> */}
       </div>
     </>
   );
