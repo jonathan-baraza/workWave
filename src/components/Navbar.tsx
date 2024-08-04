@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Logo from "../assets/logo.png";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [active, setActive] = useState<string>("Home");
@@ -9,7 +10,8 @@ const Navbar = () => {
         <img src={Logo} className="w-[150px]" />
       </div>
       <div className="navBtns flex items-center gap-6">
-        <div
+        <Link
+          to={"/"}
           className={`btnNav text-white hover:cursor-pointer hover:bg-black duration-100 px-4 py-2 rounded-lg text-sm ${
             active == "Home" && "bg-black"
           }`}
@@ -17,8 +19,9 @@ const Navbar = () => {
         >
           {" "}
           Home
-        </div>
-        <div
+        </Link>
+        <Link
+          to={"/jobs"}
           className={`btnNav text-white hover:cursor-pointer hover:bg-black duration-100 px-4 py-2 rounded-lg text-sm ${
             active == "Job" && "bg-black"
           }`}
@@ -26,8 +29,9 @@ const Navbar = () => {
         >
           {" "}
           Jobs
-        </div>
-        <div
+        </Link>
+        <Link
+          to={"add-job"}
           className={`btnNav text-white hover:cursor-pointer hover:bg-black duration-100 px-4 py-2 rounded-lg text-sm ${
             active == "Add" && "bg-black"
           }`}
@@ -35,7 +39,7 @@ const Navbar = () => {
         >
           {" "}
           Add Job
-        </div>
+        </Link>
       </div>
     </div>
   );
