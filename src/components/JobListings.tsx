@@ -1,6 +1,6 @@
 import React from "react";
 import jobs from "../jobs.json";
-import JobCard from "./JobCard";
+import JobListing from "./JobListing";
 
 const JobListings = () => {
   console.log(jobs.jobs[0]);
@@ -8,7 +8,7 @@ const JobListings = () => {
     <div className="w-full py-12 my-12 bg-[#ebf4f5] min-h-[30vh]">
       <div className="w-3/4   mx-auto  grid grid-cols-3 gap-8  ">
         {jobs.jobs.map((job) => (
-          <JobCard job={job} key={job.id} />
+          <JobListing job={job} key={job.id} />
         ))}
       </div>
     </div>
