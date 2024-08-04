@@ -1,4 +1,4 @@
-import React from "react";
+
 type HeroProps = {
   title: string;
   tagline: string;
